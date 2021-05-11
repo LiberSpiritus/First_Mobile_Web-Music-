@@ -54,7 +54,7 @@ hr{border-top:1px solid #6592ab;}
 .search{padding:0px var(--search-whitespace) 0px 15px; display: flex; position:relative;}
 .search .searchInput{background: #336666; border-radius: 28px; width:100%; height:33px; color:var(--color-white); padding-left:28px;}
 .search .searchInput::placeholder{color:var(--color-white);}
-.search .searchBtn{background:url(../images/search.png) no-repeat; background-size: 100%; width:17px; height:17px; cursor:pointer;
+.search .searchBtn{background:url(../images/Search.png) no-repeat; background-size: 100%; width:17px; height:17px; cursor:pointer;
 position:absolute; right:var(--search-whitespace); top:50%; transform:translateY(-50%); margin-right:17px;}
 
 .menu+.hrLine{margin-bottom: 17px;}
