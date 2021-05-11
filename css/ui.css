@@ -1,0 +1,100 @@
+@charset "euckr";
+@import url(reset.css);
+
+:root{
+    --color-blue: #4a7394;
+    --color-white:#fff;
+    --search-whitespace:15px;
+}
+
+p{color:#fff;}
+
+hr{border-top:1px solid #6592ab;}
+
+
+/* IR 기법 */
+.visually-hidden { 
+    border: 0; padding: 0; margin: 0; position: absolute !important; 
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden; 
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */ 
+    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */ 
+    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/ white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */ 
+}
+
+
+
+
+.bg{background: url(../images/Background.png) top center no-repeat; background-size: 100% 100%;} 
+
+.header{padding:15px 10px 0px 10px; display:flex; position:relative; justify-content: space-between; align-items: center;}
+
+.header .dots{display: flex;}
+.header .dots > span{width:7px; height:7px; margin-right:3px;}
+.header .dots .on{background: url(../images/DotsOn.png); background-size: 100%; }
+.header .dots .off{background: url(../images/DotsOff.png); background-size: 100%; }
+
+
+.header .wifi{margin-top:-4px; margin-left:8px; display: flex;}
+.header .wifi p {margin-right:7px;}
+.header .wifi p:last-of-type{margin:0;}
+.header .wifi img{width:16px; height:11px;}
+
+.header .battery{display:flex; margin-top:-4px;}
+.header .battery img{width:28px; height:11px; margin-left:4px; margin-top:3px;}
+
+.header .time{margin-top:-4px;}
+
+
+.menu{padding:22px 15px 17px 15px; display:flex; justify-content: space-between; position:relative;}
+.menu .hamberger img{width:24px; height:17px;}
+.menu .setting img{width:27px; height:26px;}
+
+.search{padding:0px var(--search-whitespace) 0px 15px; display: flex; position:relative;}
+.search .searchInput{background: #336666; border-radius: 28px; width:100%; height:33px; color:var(--color-white); padding-left:28px;}
+.search .searchInput::placeholder{color:var(--color-white);}
+.search .searchBtn{background:url(../images/search.png) no-repeat; background-size: 100%; width:17px; height:17px; cursor:pointer;
+position:absolute; right:var(--search-whitespace); top:50%; transform:translateY(-50%); margin-right:17px;}
+
+.menu+.hrLine{margin-bottom: 17px;}
+.search+.hrLine{margin:17px 0px 17px 0px;}
+
+.menuBtn{display: flex; margin:0px 15px 0px 15px; align-items: center; justify-content: center;}
+.menuBtn .menuBtnFont{border:1px solid #839fb6; border-radius: 28px; width:190px; height:55px; text-align: center; display:flex; align-items: center; justify-content: center; margin-right:12px;}
+.menuBtn .menuBtnFont:first-child{background:#6b8ba8; color:var(--color-white);}
+.menuBtn .menuBtnFont:last-child{margin:0;}
+
+.album{
+    margin-top:16px; -webkit-box-shadow: inset 0px 0px 3px 3px #223D55; 
+    box-shadow: inset 0px 0px 3px 3px #223D55; padding:10px 15px 10px 15px; display:flex; justify-content: center;
+    flex-direction: column;
+}
+.albumBox{ display:flex; align-items: center; justify-content: center; }
+.albumBox+.hrLine{margin:7px 0px;}
+.albumCover{margin-right:18px;}
+.albumCover img{max-width:100%;}
+.albumContent .top{line-height: 23px;}
+.albumContent .top+hr{margin:10px 0px;}
+.albumContent .top p{font-size:17px;}
+.albumContent .bottom{display: flex;}
+.albumContent .bottom p{margin-right:28px; display:flex;}
+.albumContent .bottom p:last-child{margin-right:0;}
+.albumContent .bottom p span:first-child{margin-right:6px;}
+.albumContent .bottom .heartImg{    width: 14px; height: 12px;}
+.albumContent .bottom .listenImg{width:12px; height:13px;}
+.albumContent .bottom .downloadImg{width:11px; height:14px;}
+.albumPolygon{border:1px solid var(--color-white); border-radius: 50%; padding:10px 6px; margin-left:10px; display:flex; align-items: center;}
+.albumPolygon img{width:16px;}
+
+.playBar{display: flex; justify-content: space-around; align-items: center; background:url(../images/playBarBg.png) left top no-repeat; background-size: 100%; padding:15px 0px;}
+.playBar img{max-width: 100%;}
+.playBar .bigPauseImg{width:21px;}
+.playBar .bigHeartImg{width:27px;}
+.playBar .bigDownloadImg{width:23px;}
+
+.album:last-of-type{margin:0;}
+
+.transparencyBar{background:url(../images/transparencyBg_02.png) no-repeat; background-size: 100% 100%; position: fixed; bottom: 0; width: 100%;}
+.transparencyBar p{display: flex; align-items: center; justify-content: center; padding:15px 0px; border-top: 3px solid #6633334f;}
+.transparencyBar .bottomCDImg {margin-right:10px; }
